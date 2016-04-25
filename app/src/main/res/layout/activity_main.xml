@@ -43,7 +43,8 @@
         android:id="@+id/searchZipText"
         android:layout_above="@+id/searchZipButton"
         android:layout_centerHorizontal="true"
-        android:hint="Enter Zip" />
+        android:hint="Enter Zip"
+        android:gravity="center" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -54,7 +55,8 @@
         android:layout_alignEnd="@+id/searchZipText"
         android:layout_alignLeft="@+id/searchZipText"
         android:layout_alignStart="@+id/searchZipText"
-        android:hint="Enter City" />
+        android:hint="Enter City"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -32,5 +32,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(cityIntent);
             }
         });
+
+        mSearchZipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String zip = mSearchZipButton.getText().toString();
+                Intent zipIntent = new Intent(MainActivity.this, ForecastActivity.class);
+                startActivity(zipIntent);
+            }
+        });
+
+
     }
 }

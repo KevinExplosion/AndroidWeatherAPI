@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String city = mSearchCityText.getText().toString();
                 Intent cityIntent = new Intent(MainActivity.this, ForecastActivity.class);
+                cityIntent.putExtra("CITY", city);
                 startActivity(cityIntent);
             }
         });

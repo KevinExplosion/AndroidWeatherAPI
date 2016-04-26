@@ -8,8 +8,6 @@ import okhttp3.Callback;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import se.akerfeldt.okhttp.signpost.OkHttpOAuthConsumer;
-import se.akerfeldt.okhttp.signpost.SigningInterceptor;
 
 import static com.example.guest.willitrain.Constants.WEATHER_CITY_QUERY_PARAMETER;
 
@@ -18,14 +16,15 @@ import static com.example.guest.willitrain.Constants.WEATHER_CITY_QUERY_PARAMETE
  */
 public class WeatherService {
 
-    public static void getWeather(String location, Callback callback) {
-        String WEATHER_API =Constants.WEATHER_API;
+    public static void findForecast(String location, Callback callback) {
+        Log.d("LOCATION", location);
+        String WEATHER_API = Constants.WEATHER_API;
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.WEATHER_BASE_URL).newBuilder();
-        urlBuilder.addQueryParameter(WEATHER_CITY_QUERY_PARAMETER, location);
+        urlBuilder.addQueryParameter(Constants.WEATHER_CITY_QUERY_PARAMETER, location);
         urlBuilder.addQueryParameter("appid", WEATHER_API);
         Log.d("tag", ""+urlBuilder);
 
@@ -37,6 +36,5 @@ public class WeatherService {
 
         Call call = client.newCall(request);
         call.enqueue(callback);
-
     }
 }

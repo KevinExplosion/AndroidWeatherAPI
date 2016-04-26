@@ -6,6 +6,6 @@ package com.example.guest.willitrain;
 public class Constants {
     public static final String WEATHER_API = BuildConfig.WEATHER_API;
 
-    public static final String WEATHER_BASE_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?&cnt=7";
+    public static final String WEATHER_BASE_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?";
     public static final String WEATHER_CITY_QUERY_PARAMETER = "q";
 }
